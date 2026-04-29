@@ -1,0 +1,17 @@
+node_modules/
+dist/
+build/
+.turbo/
+.DS_Store
+*.log
+
+# Local DB and any imported CSV artifacts — never commit financial data
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+data/imports/
+*.csv
+
+.env
+.env.local

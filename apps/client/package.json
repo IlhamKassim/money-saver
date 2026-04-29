@@ -1,0 +1,10 @@
+{
+  "name": "@money-saver/client",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'run: bun create vite . --template react-ts' && exit 1",
+    "typecheck": "echo 'pending vite scaffold'"
+  }
+}
