@@ -38,8 +38,9 @@ accountsRoutes.get("/:id", async (c) => {
 
 accountsRoutes.delete("/:id", async (c) => {
   const userId = c.get("userId");
-  const result = await db
+  const deleted = await db
     .delete(schema.accounts)
-    .where(and(eq(schema.accounts.id, c.req.param("id")), eq(schema.accounts.userId, userId)));
-  return c.json({ deleted: result.rowsAffected ?? 0 });
+    .where(and(eq(schema.accounts.id, c.req.param("id")), eq(schema.accounts.userId, userId)))
+    .returning({ id: schema.accounts.id });
+  return c.json({ deleted: deleted.length });
 });

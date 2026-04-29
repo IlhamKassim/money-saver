@@ -9,11 +9,12 @@
   ],
   "scripts": {
     "dev": "bun run --filter '*' dev",
-    "dev:server": "bun --cwd apps/server run dev",
-    "dev:client": "bun --cwd apps/client run dev",
-    "db:generate": "bun --cwd packages/db run generate",
-    "db:migrate": "bun --cwd packages/db run migrate",
-    "db:studio": "bun --cwd packages/db run studio",
+    "dev:server": "bun run --filter @money-saver/server dev",
+    "dev:client": "bun run --filter @money-saver/client dev",
+    "db:generate": "bun run --filter @money-saver/db generate",
+    "db:migrate": "bun run --filter @money-saver/db migrate",
+    "db:studio": "bun run --filter @money-saver/db studio",
+    "seed": "bun run --filter @money-saver/db seed",
     "typecheck": "bun run --filter '*' typecheck"
   },
   "devDependencies": {
